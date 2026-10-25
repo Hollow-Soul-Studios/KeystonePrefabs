@@ -122,7 +122,7 @@ body:
       label: Source control
       description: Some operations check out or write extra files. See Source control behaviour in the documentation.
       options:
-        - None
+        - No source control
         - Perforce
         - Git
         - Other
