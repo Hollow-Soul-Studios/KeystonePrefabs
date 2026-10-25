@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest a change or a new feature for Keystone Prefabs.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check [Limitations](https://github.com/Hollow-Soul-Studios/KeystonePrefabs/blob/main/limitations.md) first; it lists what 1.0 does not do and what is planned.
+        No diagnostics report is needed for a feature request.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The workflow or problem, not only the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like Keystone Prefabs to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+      description: How you handle it today, if at all.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: engine
+    attributes:
+      label: Engine version you use
+      options:
+        - UE 5.8
+        - UE 5.7
+        - Other
+    validations:
+      required: false

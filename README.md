@@ -23,6 +23,10 @@ This repository contains the user documentation and screenshots only. The plugin
 
 UE 5.7 and 5.8, Win64 editor; built and tested on UE 5.7.4 and 5.8.4. Packaged games: Win64. See [Limitations](limitations.md).
 
+## Reporting a problem
+
+Open an issue with the **Bug report** template. It asks for the diagnostics report the plugin writes: open the affected level, choose **Tools > Keystone Prefabs > Write Diagnostics Report** (console: `Keystone.Diagnostics`), review the file in `Saved/Logs`, and attach it. See the [FAQ](faq.md#something-went-wrong-what-should-i-send).
+
 ## Screenshots
 
 | | |

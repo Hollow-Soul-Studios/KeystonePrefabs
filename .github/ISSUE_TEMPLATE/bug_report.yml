@@ -1,0 +1,138 @@
+name: Bug report
+description: Something in Keystone Prefabs does not work as documented.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Before you start:
+
+        1. Open the level where the problem happens.
+        2. Choose **Tools > Keystone Prefabs > Write Diagnostics Report** (or run the console command `Keystone.Diagnostics`).
+           The report is written to `Saved/Logs/KeystoneDiagnostics_<date>_<time>.txt` in your project, and its folder opens.
+        3. Read the whole report. Redaction is best-effort: the project, engine and user folders and your user name are replaced with placeholders, but other paths and all asset, level and actor names are left as they are. Remove anything you do not want to share.
+
+        See the [FAQ](https://github.com/Hollow-Soul-Studios/KeystonePrefabs/blob/main/faq.md#something-went-wrong-what-should-i-send) for what the report contains.
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics report
+      description: Drag the `KeystoneDiagnostics_<date>_<time>.txt` file into this box to attach it, or paste its contents. If the editor crashes before you can write the report, say so here and attach the crash log from `Saved/Crashes` or `Saved/Logs` instead.
+      placeholder: Drop KeystoneDiagnostics_<date>_<time>.txt here
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: reviewed
+    attributes:
+      label: Report review
+      options:
+        - label: I have read the whole report and removed anything I do not want to share.
+          required: true
+
+  - type: dropdown
+    id: engine
+    attributes:
+      label: Engine version
+      description: Also listed under "Engine and system" in the report.
+      options:
+        - UE 5.8
+        - UE 5.7
+        - Other (say which in the description)
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Listed under "Plugin" in the report, for example `1.0.0 (1)`.
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Where the problem shows up.
+      options:
+        - Create prefab / placing instances
+        - Edit in place (Commit, Discard)
+        - Overrides (Apply, Revert)
+        - Remove Child (hide or delete)
+        - Variants
+        - Nested prefabs
+        - ISM / HISM inside prefabs
+        - Pack / Unpack
+        - Bake (Actors, Level Instance, Packed Level Actor)
+        - Spawning at runtime / packaged game
+        - Health report
+        - World Partition / UpdatePrefabInstances commandlet
+        - Python API
+        - Details panel, Outliner, menus, thumbnails
+        - Crash
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Start from a state we can recreate, for example the demo map `/KeystonePrefabs/Demo/Maps/KeystonePrefabs_Demo` or a new level.
+      placeholder: |
+        1. Open the demo map.
+        2. Select P_Gazebo_RoofOverride.
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include error messages and notifications. Screenshots or a short video help for Details panel, Outliner and viewport problems.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - Once so far
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source-control
+    attributes:
+      label: Source control
+      description: Some operations check out or write extra files. See Source control behaviour in the documentation.
+      options:
+        - None
+        - Perforce
+        - Git
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Other plugins that touch actors or levels, custom engine changes, when the problem started.
+    validations:
+      required: false
