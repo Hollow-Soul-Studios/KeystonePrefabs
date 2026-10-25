@@ -55,3 +55,7 @@ To the message log named **Keystone Prefabs** (`Window > Developer Tools > Messa
 ## Can I automate this?
 
 Yes: Python (`unreal.KPrefabEditorLibrary`, `unreal.KPrefabLibrary`) and the `UpdatePrefabInstances` commandlet. See [Python and CI](python_and_ci.md).
+
+## Something went wrong. What should I send?
+
+Choose **Tools > Keystone Prefabs > Write Diagnostics Report** (or run the console command `Keystone.Diagnostics`) with the affected level open. It writes `Saved/Logs/KeystoneDiagnostics_<date>_<time>.txt` in your project and opens its folder. The report lists the plugin, engine, OS, CPU, GPU and RHI versions, your other enabled non-engine plugins, the prefab instances in the level with their override counts, the Health report, and the lines of this session's editor log that mention Keystone or are errors. Absolute paths and your user name are replaced with placeholders; read it before sending if your asset names are confidential. Attach it to your support request, together with the steps that led to the problem.

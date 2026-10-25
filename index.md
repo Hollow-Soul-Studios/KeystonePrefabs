@@ -207,6 +207,8 @@ Prefab structure cannot be edited or replicated at runtime; see [Limitations](li
 
 Stale overrides can be removed per instance with **Remove Stale Overrides**.
 
+**Tools > Keystone Prefabs > Write Diagnostics Report** (console: `Keystone.Diagnostics`; Python: `unreal.KPrefabEditorLibrary.write_diagnostics_report()`) writes a troubleshooting report to `Saved/Logs/KeystoneDiagnostics_<date>_<time>.txt`: versions, enabled non-engine plugins, instances, this Health report, and Keystone-related and error lines from the editor log. Attach it when you report a problem; see the [FAQ](faq.md#something-went-wrong-what-should-i-send).
+
 ## 14. Updating every instance
 
 - **Loaded instances**: a commit re-syncs them automatically. Out-of-date instances can also be refreshed with **Tools > Keystone Prefabs > Update All Prefab Instances**, with **Update Instances** in a prefab's Content Browser menu, or with **Update Instance** on selected instances.
