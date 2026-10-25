@@ -68,6 +68,8 @@ Runtime-side calls work from Python too, for example `unreal.KPrefabLibrary.get_
 
 ## CI
 
+The PowerShell scripts named in this section (`Scripts/RunTests.ps1`, `Scripts/RunRuntimeSmoke.ps1`, `Scripts/PackageForFab.ps1`) are development tools of the plugin's source repository and are not part of the Fab package. The test suite itself (`Content/Python/keystone_tests`) and the commandlet ship with the plugin: run the suite by passing the full path of `keystone_tests/run_all.py` to the editor's `py` command (for example `-ExecCmds="py <plugin dir>/Content/Python/keystone_tests/run_all.py"`), and the commandlet as described below.
+
 The regression suite (`Plugins/KeystonePrefabs/Content/Python/keystone_tests`) runs inside a headless editor, because some operations it covers (actor duplication, copy/paste) need the full editor rather than the `pythonscript` commandlet. `Scripts/RunTests.ps1` runs it and then exercises the `UpdatePrefabInstances` commandlet against the World Partition map the tests leave stale on disk (`-Verify` must fail, `-DryRun` must list the files, the update must succeed, `-Verify` must then pass):
 
 ```
